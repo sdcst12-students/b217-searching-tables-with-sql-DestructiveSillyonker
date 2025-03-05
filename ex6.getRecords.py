@@ -6,7 +6,7 @@ connection = sqlite3.connect(file)
 print(connection)
 
 cursor = connection.cursor()
-query = "select * from npc"
+query = "select * from npc where class='Jester'"
 """
 Note that instead of selecting ALL of the data, we can be more specific about what we select and
 where we select from:
@@ -23,3 +23,4 @@ result = cursor.fetchall()
 print(result)
 for i in result:
     print(i)
+print(f"There are {len(result)} jesters")
